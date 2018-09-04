@@ -14,11 +14,26 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	if (!(c) || (*s == '\0' && c != '\0'))
-		return (NULL);
-	else if (*s != c)
-		return (ft_strchr(++s, c));
-	else if (*s == c)
-		return ((char *)s);
-	return (NULL);
+  int   i;
+
+  i = ft_strlen(s);
+  ft_putchar(i);
+  if (!(c) || (*s == '\0' && c != '\0'))
+    return (NULL);
+  while (i >= 0)
+  {
+    ft_putchar(s[i]);
+    if (s[i] == c)
+      return ((char *)s);
+    i--;
+    s++;
+  }
+  return (NULL);
+}
+
+int   main(int argc, char **argv)
+{
+  argc = 2;
+  ft_putstr(ft_strrchr(argv[1], argv[2][0]));
+  return (0);
 }
