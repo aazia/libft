@@ -6,10 +6,11 @@
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/26 23:23:19 by azkeever          #+#    #+#             */
-/*   Updated: 2018/08/26 23:24:33 by azkeever         ###   ########.fr       */
+/*   Updated: 2018/09/03 22:54:23 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
 int		ft_strlen(const char *str)
