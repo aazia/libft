@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 19:44:25 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/13 18:15:09 by azkeever         ###   ########.fr       */
+/*   Created: 2018/11/13 14:46:08 by azkeever          #+#    #+#             */
+/*   Updated: 2018/11/13 18:15:21 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*new;
 	int		i;
@@ -25,7 +25,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 		if (!(new = ft_strnew(b)))
 			return (NULL);
 		while (s[i++])
-			new[i] = f(s[i]);
+			new[i] = f(i, s[i]);
 		return (new);
 	}
 	return (NULL);

@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 19:44:25 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/13 18:15:09 by azkeever         ###   ########.fr       */
+/*   Created: 2018/11/13 17:12:14 by azkeever          #+#    #+#             */
+/*   Updated: 2018/11/13 17:17:43 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+void	ft_strrev(char *s)
 {
-	char	*new;
-	int		i;
-	size_t	b;
+	int l;
+	int i;
 
-	if (s && f)
+	l = ft_strlen(s);
+	i = 0;
+	while (i++ < l / 2)
 	{
-		i = 0;
-		b = ft_strlen(s);
-		if (!(new = ft_strnew(b)))
-			return (NULL);
-		while (s[i++])
-			new[i] = f(s[i]);
-		return (new);
+		s[l - i - 1] ^= s[i];
+		s[i] ^= s[l - i - 1];
+		s[l - i - 1] ^= s[i];
 	}
-	return (NULL);
 }

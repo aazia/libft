@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 19:44:25 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/13 18:15:09 by azkeever         ###   ########.fr       */
+/*   Created: 2018/11/13 16:29:53 by azkeever          #+#    #+#             */
+/*   Updated: 2018/11/13 17:11:52 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+int		ft_intlen(int n)
 {
-	char	*new;
-	int		i;
-	size_t	b;
+	int l;
 
-	if (s && f)
+	l = (n <= 0) ? 1 : 0;
+	while (n != 0)
 	{
-		i = 0;
-		b = ft_strlen(s);
-		if (!(new = ft_strnew(b)))
-			return (NULL);
-		while (s[i++])
-			new[i] = f(s[i]);
-		return (new);
+		n /= 10;
+		l++;
 	}
-	return (NULL);
+	return (l);
 }

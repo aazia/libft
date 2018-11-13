@@ -6,16 +6,16 @@
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 17:09:51 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/12 17:12:47 by azkeever         ###   ########.fr       */
+/*   Updated: 2018/11/13 16:23:48 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	while (*dst && *src)
 		*dst++ = *src++;
-	*dst = '\0';
+	*dst = *src;
 	return (dst);
 }

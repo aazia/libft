@@ -6,7 +6,7 @@
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 14:12:37 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/12 16:42:21 by azkeever         ###   ########.fr       */
+/*   Updated: 2018/11/13 18:16:01 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-	unsigned char *d;
+	size_t	i;
+	char	*d;
 
 	i = 0;
 	d = s;
-	while (i < n && n != 0)
-		d[i] = 0;
+	while (i++ < n)
+		*d++ = 0;
 }
