@@ -6,7 +6,7 @@
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 14:28:49 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/13 17:52:51 by azkeever         ###   ########.fr       */
+/*   Updated: 2018/11/13 18:54:18 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void		ft_putnbr_fd(int nb, int fd);
 
 int			ft_intlen(int n);
 void		ft_strrev(char *s);
+int			ft_isspace(const char n);
 
 /* ------------- */
 /* BONUS SECTION */

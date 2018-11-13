@@ -6,7 +6,7 @@
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 13:49:33 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/13 18:19:24 by azkeever         ###   ########.fr       */
+/*   Updated: 2018/11/13 18:55:33 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,10 @@ char	*ft_strtrim(char const *s)
 	if (!(s))
 		return (NULL);
 	j = ft_strlen(s);
-	while (s[j - 1] == ' ' || r[j] == '\t' || r[j] == '\n')
+	while (ft_isspace(s[j - 1]))
 		j--;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
-	{
-		i++;
+	while (ft_isspace(s[i++]))
 		j--;
-	}
 	if ((j < 0) || !(ft_strnew(j)))
 		return (NULL);
 	s += i;
