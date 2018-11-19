@@ -17,13 +17,12 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = ft_strlen(s);
-	if (!(c) || (*s == '\0' && c != '\0'))
-		return (NULL);
-	while (i >= 0)
-	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i--;
-	}
-	return (NULL);
+  if (i == 0)
+    return (NULL);
+  if (c == 0)
+    return ((char *)s + ft_strlen(s));
+  while (--i >= 0)
+    if (s[i] == c)
+      return ((char *)s + i);
+  return (NULL);
 }

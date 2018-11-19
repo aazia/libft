@@ -3,35 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: azkeever <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 13:49:33 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/13 18:55:33 by azkeever         ###   ########.fr       */
+/*   Created: 2018/04/20 20:13:06 by smonroe           #+#    #+#             */
+/*   Updated: 2018/04/21 15:45:41 by smonroe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char	*ft_strtrim(const char *s)
 {
-	char	*r;
 	int		i;
 	int		j;
+	char	*t;
 
-	i = 0;
 	if (!(s))
 		return (NULL);
 	j = ft_strlen(s);
-	while (ft_isspace(s[j - 1]))
+	while (ft_isspace(s[j - 1]) == 1)
 		j--;
-	while (ft_isspace(s[i++]))
+	i = -1;
+	while (ft_isspace(s[++i]) == 1)
 		j--;
-	if ((j < 0) || !(ft_strnew(j)))
+	if (j < 0)
+		j = 0;
+	if (!(t = ft_strnew(j)))
 		return (NULL);
 	s += i;
-	i = 0;
-	while (i < j)
-		r[i++] = *s++;
-	r[i] = '\0';
-	return (r);
+	i = -1;
+	while (++i < j)
+		t[i] = *s++;
+	t[i] = '\0';
+	return (t);
 }

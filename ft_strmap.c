@@ -20,11 +20,11 @@ char	*ft_strmap(char const *s, char (*f)(char))
 
 	if (s && f)
 	{
-		i = 0;
+		i = -1;
 		b = ft_strlen(s);
 		if (!(new = ft_strnew(b)))
 			return (NULL);
-		while (s[i++])
+		while (s[++i])
 			new[i] = f(s[i]);
 		return (new);
 	}

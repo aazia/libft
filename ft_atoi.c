@@ -1,41 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 14:37:24 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/13 18:15:49 by azkeever         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 int		ft_atoi(const char *str)
 {
-	int		i;
-	int		l;
-	long	n;
+	int		sign;
+	int		res;
 
-	i = 0;
-	n = 0;
-	l = 0;
-	while (str[i] == '\r' || str[i] == '\n' || str[i] == '\t' ||
-			str[i] == '\f' || str[i] == '\v' || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-		l++;
-	while (str[i] != '\0')
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v'
+			|| *str == '\r' || *str == '\f')
+		str++;
+	res = 0;
+	sign = 1;
+	if (*str == '-' || *str == '+')
 	{
-		if (n >= 922337203685477580 && (((str[i] - '0') > 8 && str[l] == '-') ||
-										((str[i] - '0') > 7 && str[l] != '-')))
-			return (str[l] == '-' ? 0 : -1);
-		if (str[i] >= '0' && str[i] <= '9')
-			n = n * 10 + (str[i] - '0');
-		else if (!(str[i] >= '0' && str[i] <= '9'))
-			break ;
-		i++;
+		sign = (*str == '-' ? -1 : 1);
+		str++;
 	}
-	return (str[l] == '-' ? (n * -1) : n);
+	while (ft_isdigit(*str))
+	{
+		res = (res * 10) + (*str - '0');
+		str++;
+	}
+	return (res * sign);
 }
+
