@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdio.h>
 
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
@@ -32,8 +33,8 @@ char		*ft_strncat(char *s1, const char *s2, size_t n);
 size_t  ft_strlcat(char *s1, const char *s2, size_t size);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
-char		*ft_strstr(const char *s, const char *n);
-char		*ft_strnstr(const char *s, const char *n, size_t len);
+char		*ft_strstr(const char *haystack, const char *needle);
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t len);
 int			ft_atoi(const char *str);
@@ -84,10 +85,10 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-//t_list	*ft_lstnew(void const *content, size_t content_size);
-//void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-//void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-//void		ft_lstadd(t_list **alst, t_list *new);
-//void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-//t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem));
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstadd(t_list **alst, t_list *new);
+void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem));
 #endif
