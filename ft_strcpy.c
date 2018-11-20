@@ -6,7 +6,7 @@
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 17:09:51 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/13 16:23:48 by azkeever         ###   ########.fr       */
+/*   Updated: 2018/11/20 14:46:00 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-  int i;
+	int i;
 
-  i = -1;
+	i = -1;
 	while (src[++i])
 		dst[i] = src[i];
 	dst[i] = src[i];

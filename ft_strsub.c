@@ -6,7 +6,7 @@
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 19:46:17 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/13 18:12:48 by azkeever         ###   ########.fr       */
+/*   Updated: 2018/11/20 14:39:38 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!(str = ft_strnew(len)))
 		return (NULL);
-  len += start;
+	len += start;
 	while (start < len && s[start] != '\0')
 		str[i++] = s[start++];
-  if (start != len)
-    return (NULL);
+	if (start != len)
+		return (NULL);
 	str[i] = '\0';
 	return (str);
 }

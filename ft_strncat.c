@@ -6,7 +6,7 @@
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 17:16:49 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/13 18:19:45 by azkeever         ###   ########.fr       */
+/*   Updated: 2018/11/20 14:36:48 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	size_t i;
-  size_t j;
+	size_t j;
 
 	i = 0;
-  j = 0;
+	j = 0;
 	while (s1[i] != '\0')
 		i++;
 	while (*s2 && n)
