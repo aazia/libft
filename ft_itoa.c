@@ -6,7 +6,7 @@
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 14:52:05 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/20 14:55:50 by azkeever         ###   ########.fr       */
+/*   Updated: 2018/11/20 22:14:38 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ char		*ft_itoa(int n)
 		ntmp = ntmp / 10;
 	}
 	if (n < 0)
+	{
 		buff[i++] = '-';
-	if (!(str = ft_memalloc((size_t)i + 1)))
+		if (!(str = ft_memalloc((size_t)i + 2)))
+			return (NULL);
+	}
+	else if (!(str = ft_memalloc((size_t)i + 1)))
 		return (NULL);
 	if (n == -2147483648)
 		return ("-2147483648");
