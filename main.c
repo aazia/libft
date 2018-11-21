@@ -2,11 +2,9 @@
 
 int		main(void)
 {
-	char	*str;
+	char *buf2 = "A";
 
-	str = "1981284353";
-	printf("atoi: %d\n", atoi(str));
-	printf("ftatoi: %d\n", ft_atoi(str));
+	printf("strnstr:\n %s\n\n", strnstr(buf2, buf2, 2));
+	printf("ft_strnstr:\n %s", ft_strnstr(buf2, buf2, 2));
 	return (0);
 }
-

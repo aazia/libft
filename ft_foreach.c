@@ -1,40 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 20:20:25 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/21 20:20:29 by azkeever         ###   ########.fr       */
+/*   Created: 2018/10/29 15:33:17 by azkeever          #+#    #+#             */
+/*   Updated: 2018/10/31 15:57:39 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_itoa(int n)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	int		len;
-	int		sign;
-	int		tmp;
-	char	*a;
+	int i;
 
-	sign = 0;
-	if (n < 0)
-		sign = 1;
-	tmp = n;
-	len = 1;
-	while ((tmp /= 10))
-		len++;
-	a = ft_strnew(len + sign);
-	if (a == NULL)
-		return (NULL);
-	if (sign)
-		a[0] = '-';
-	while (len--)
-	{
-		a[len + sign] = (sign ? -(n % 10) : (n % 10)) + '0';
-		n /= 10;
-	}
-	return (a);
+	i = 0;
+	while (i < length)
+		f(tab[i++]);
 }

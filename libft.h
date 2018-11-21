@@ -6,7 +6,7 @@
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 14:28:49 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/20 16:22:21 by azkeever         ###   ########.fr       */
+/*   Updated: 2018/11/21 20:48:42 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,16 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int nb, int fd);
 int					ft_intlen(int n);
 void				ft_strrev(char *s);
-int					ft_isspace(const char n);
-t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int					ft_isspace(const char n);
+void				ft_swap(int *a, int *b);
+int					ft_sqrt(int nb);
+void				ft_div_mod(int a, int b, int *div, int *mod);
+void				ft_foreach(int *tab, int length, void (*f)(int));
 
 #endif

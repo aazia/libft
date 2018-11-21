@@ -6,7 +6,7 @@
 #    By: azkeever <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/02 10:36:43 by azkeever          #+#    #+#              #
-#    Updated: 2018/11/13 18:10:16 by azkeever         ###   ########.fr        #
+#    Updated: 2018/11/21 21:16:42 by azkeever         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SOURCE = ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c\
 	ft_strjoin.c ft_strtrim.c ft_strsplit.c ft_itoa.c\
 	ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c\
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
-	ft_isspace.c	ft_strrev.c
+	ft_isspace.c ft_strrev.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c\
+	ft_lstiter.c ft_lstnew.c ft_lstmap.c ft_swap.c ft_sqrt.c\
+	ft_div_mod.c ft_foreach.c
 
 OBJECTS = ft_bzero.o ft_memset.o ft_memcpy.o ft_memccpy.o\
 	ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlen.o\
@@ -39,7 +41,9 @@ OBJECTS = ft_bzero.o ft_memset.o ft_memcpy.o ft_memccpy.o\
 	ft_strjoin.o ft_strtrim.o ft_strsplit.o ft_itoa.o\
 	ft_putchar.o ft_putstr.o ft_putendl.o ft_putnbr.o\
 	ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o\
-	ft_isspace.o ft_strrev.o
+	ft_isspace.o ft_strrev.o ft_lstadd.o ft_lstdel.o ft_lstdelone.o\
+	ft_lstiter.o ft_lstnew.o ft_lstmap.o ft_swap.o ft_sqrt.o\
+	ft_div_mod.o ft_foreach.o
 
 HEADER = libft.h
 

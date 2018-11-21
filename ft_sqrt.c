@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 20:20:25 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/21 20:20:29 by azkeever         ###   ########.fr       */
+/*   Created: 2018/11/02 14:25:19 by azkeever          #+#    #+#             */
+/*   Updated: 2018/11/08 19:27:12 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_itoa(int n)
+int		ft_sqrt(int nb)
 {
-	int		len;
-	int		sign;
-	int		tmp;
-	char	*a;
+	int i;
 
-	sign = 0;
-	if (n < 0)
-		sign = 1;
-	tmp = n;
-	len = 1;
-	while ((tmp /= 10))
-		len++;
-	a = ft_strnew(len + sign);
-	if (a == NULL)
-		return (NULL);
-	if (sign)
-		a[0] = '-';
-	while (len--)
+	i = 1;
+	if (nb < 0)
+		return (0);
+	while (i < nb && i < 46341)
 	{
-		a[len + sign] = (sign ? -(n % 10) : (n % 10)) + '0';
-		n /= 10;
+		if (i * i == nb)
+			return (i);
+		i++;
 	}
-	return (a);
+	return (0);
 }

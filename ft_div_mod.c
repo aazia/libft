@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 20:20:25 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/21 20:20:29 by azkeever         ###   ########.fr       */
+/*   Created: 2018/10/29 14:05:14 by azkeever          #+#    #+#             */
+/*   Updated: 2018/11/08 15:42:56 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-char	*ft_itoa(int n)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	int		len;
-	int		sign;
-	int		tmp;
-	char	*a;
-
-	sign = 0;
-	if (n < 0)
-		sign = 1;
-	tmp = n;
-	len = 1;
-	while ((tmp /= 10))
-		len++;
-	a = ft_strnew(len + sign);
-	if (a == NULL)
-		return (NULL);
-	if (sign)
-		a[0] = '-';
-	while (len--)
+	if (b != 0)
 	{
-		a[len + sign] = (sign ? -(n % 10) : (n % 10)) + '0';
-		n /= 10;
+		*div = a / b;
+		*mod = a % b;
 	}
-	return (a);
+	else
+		;
 }

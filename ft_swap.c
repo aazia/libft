@@ -1,40 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azkeever <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 20:20:25 by azkeever          #+#    #+#             */
-/*   Updated: 2018/11/21 20:20:29 by azkeever         ###   ########.fr       */
+/*   Created: 2018/10/29 14:02:46 by azkeever          #+#    #+#             */
+/*   Updated: 2018/11/08 13:15:53 by azkeever         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_itoa(int n)
+void	ft_swap(int *a, int *b)
 {
-	int		len;
-	int		sign;
-	int		tmp;
-	char	*a;
+	int temp;
 
-	sign = 0;
-	if (n < 0)
-		sign = 1;
-	tmp = n;
-	len = 1;
-	while ((tmp /= 10))
-		len++;
-	a = ft_strnew(len + sign);
-	if (a == NULL)
-		return (NULL);
-	if (sign)
-		a[0] = '-';
-	while (len--)
-	{
-		a[len + sign] = (sign ? -(n % 10) : (n % 10)) + '0';
-		n /= 10;
-	}
-	return (a);
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
